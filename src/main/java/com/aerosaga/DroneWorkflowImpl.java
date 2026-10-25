@@ -17,12 +17,23 @@ public class DroneWorkflowImpl implements DroneWorkflow {
 
     @Override
     public void takeoff() {
+
         Workflow.getLogger(DroneWorkflowImpl.class)
                 .info("AeroSaga mission started.");
 
         activities.takeoff();
 
         Workflow.getLogger(DroneWorkflowImpl.class)
-                .info("AeroSaga takeoff activity completed.");
+                .info("Takeoff completed.");
+
+        activities.navigateToDestination();
+
+        Workflow.getLogger(DroneWorkflowImpl.class)
+                .info("Navigation completed.");
+
+        activities.deliverPackage();
+
+        Workflow.getLogger(DroneWorkflowImpl.class)
+                .info("Package delivery completed. AeroSaga mission successful!");
     }
 }

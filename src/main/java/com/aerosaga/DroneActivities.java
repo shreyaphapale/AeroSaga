@@ -8,4 +8,10 @@ public interface DroneActivities {
 
     @ActivityMethod
     void takeoff();
+
+    @ActivityMethod
+    void navigateToDestination();
+
+    @ActivityMethod
+    void deliverPackage();
 }
