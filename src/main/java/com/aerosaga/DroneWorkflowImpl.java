@@ -32,6 +32,9 @@ public void takeoff() {
     Workflow.getLogger(DroneWorkflowImpl.class)
             .info("Takeoff completed.");
 
+           Workflow.getLogger(DroneWorkflowImpl.class)
+            .info("Drone navigation started.");
+
     activities.navigateToDestination();
 
     Workflow.getLogger(DroneWorkflowImpl.class)
