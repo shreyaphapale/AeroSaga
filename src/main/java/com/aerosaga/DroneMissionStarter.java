@@ -21,7 +21,7 @@ public class DroneMissionStarter {
                         .setTaskQueue("AEROSAGA_TASK_QUEUE")
                         .build()
         );
-
+         System.out.println("AeroSaga: Submitting drone mission to Temporal...");
         workflow.takeoff();
 
         System.out.println("AeroSaga drone mission completed!");
