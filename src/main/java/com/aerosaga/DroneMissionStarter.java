@@ -1,5 +1,5 @@
 package com.aerosaga;
-
+import java.util.UUID;
 import io.temporal.client.WorkflowClient;
 import io.temporal.client.WorkflowOptions;
 import io.temporal.serviceclient.WorkflowServiceStubs;
@@ -13,11 +13,11 @@ public class DroneMissionStarter {
 
         WorkflowClient client =
                 WorkflowClient.newInstance(service);
-
+        String missionId = "aerosaga-drone-mission-" + UUID.randomUUID(); 
         DroneWorkflow workflow = client.newWorkflowStub(
                 DroneWorkflow.class,
                 WorkflowOptions.newBuilder()
-                        .setWorkflowId("aerosaga-drone-mission-001")
+                        .setWorkflowId("missionId")
                         .setTaskQueue("AEROSAGA_TASK_QUEUE")
                         .build()
         );
