@@ -14,6 +14,7 @@ public class DroneMissionStarter {
         WorkflowClient client =
                 WorkflowClient.newInstance(service);
         String missionId = "aerosaga-drone-mission-" + UUID.randomUUID(); 
+        System.out.println("Starting mission with ID: " + missionId);
         DroneWorkflow workflow = client.newWorkflowStub(
                 DroneWorkflow.class,
                 WorkflowOptions.newBuilder()
